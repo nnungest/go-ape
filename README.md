@@ -4,7 +4,9 @@ A basic app for testing a CI CD pipeline.
 **Endpoints**
 
 GET "/" returns "hello world"
+
 GET "/hello" returns "hello"
+
 GET /world" returns "world"
 
 ## Running
@@ -12,19 +14,27 @@ GET /world" returns "world"
 A prebuilt binary is included as "go-ape" in this repo. Simply run that and access it over http: $ go-ape && curl localhost:8080/
 
 ### Option 2: Building the go Application from source
+
 Assuming go is installed:
+
 $ git clone https://github.com/nnungest/go-ape
+
 $ cd go-ape
+
 $ go build
+
 $ go-ape
+
 $ curl localhost:8080/ENDPOINT
 
 
 TODO: endpoint string manipulation
 
-## Running via Docker
+## Build and run via Docker
 
 To run this via its supplied Dockerfile instead:
 (after cloning and working from root of directory)
 
-$ docker build - < Dockerfile
+$ docker build . -t go-ape/latest
+
+$ docker run -p 8080:8080 go-ape
