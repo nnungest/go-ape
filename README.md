@@ -38,3 +38,10 @@ To run this via its supplied Dockerfile instead:
 $ docker build . -t go-ape/latest
 
 $ docker run -p 8080:8080 go-ape
+
+## Testing Via goss/dgoss
+Included is the goss.yaml file. Run it against the container via:
+
+$ dgoss run -p 8080:8080 go-ape/latest
+
+This checks that the app is running, and that endpoints are being returned thereby testing liveness on port 8080.
