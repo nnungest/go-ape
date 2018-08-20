@@ -1,0 +1,17 @@
+---
+process:
+  go-ape:
+    running: true
+http:
+  http://localhost:8080:
+        status: 200
+        timeout: 1000
+        body: [hello world]
+  http://localhost:8080/hello:
+        status: 200
+        timeout: 1000
+        body: [hello]
+  http://localhost:8080/world:
+        status: 200
+        timeout: 1000
+        body: [world]
