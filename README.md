@@ -1,6 +1,7 @@
 # Go Ape
 A basic app for testing a CI CD pipeline.
 
+
 **Endpoints**
 
 GET "/" returns "hello world"
@@ -15,6 +16,8 @@ GET /world" returns "world"
 
 With the app in a running state you can test these endpoints via curl: ```curl localhost:8080/hello```
 
+Inline-style: 
+![alt text](https://github.com/nnungest/go-ape/docs/hello.png "example via httpie")
 
 ## Running
 _note: Under each header ive posted in parens what the local dependencies are._
