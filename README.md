@@ -19,7 +19,7 @@ With the app in a running state you can test these endpoints via curl: ```curl l
 
 ![http](https://raw.githubusercontent.com/nnungest/go-ape/master/docs/hello.png "example via httpie")
 
-Above using spiffy httpie: (jakubroztocil/httpie)[https://github.com/jakubroztocil/httpie]
+Above using spiffy httpie: https://github.com/jakubroztocil/httpie
 ## Running
 _note: Under each header ive posted in parens what the local dependencies are._
 ### Option 1: Running from pre-built
