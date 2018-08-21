@@ -7,6 +7,22 @@ http:
         status: 200
         timeout: 1000
         body: [hello world]
+  http://localhost:8080/uppercase=true:
+        status: 200
+        timeout: 1000
+        body: [HELLO WORLD]
+  http://localhost:8080/uppercase=false:
+        status: 200
+        timeout: 1000
+        body: [hello world]
+  http://localhost:8080/reverse=true:
+        status: 200
+        timeout: 1000
+        body: [dlrow olleh]
+  http://localhost:8080/reverse=false:
+        status: 200
+        timeout: 1000
+        body: [hello world]
   http://localhost:8080/hello:
         status: 200
         timeout: 1000
