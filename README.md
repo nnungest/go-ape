@@ -13,11 +13,17 @@ GET "/hello" returns "hello"
 
 GET /world" returns "world"
 
+With the app in a running state you can test these endpoints via curl: ```curl localhost:8080/hello```
+
+
 ## Running
+_note: Under each header ive posted in parens what the local dependencies are._
 ### Option 1: Running from pre-built
+
 A prebuilt binary is included as "go-ape" in this repo. Simply run that and access it over http: $ ./go-ape && curl localhost:8080/
 
-### Option 2: Building the go Application from source
+### Option 2: Building the go Application from source 
+(go, curl, git)
 
 Assuming go is installed:
 
@@ -29,12 +35,10 @@ $ go build
 
 $ ./go-ape
 
-$ curl localhost:8080/ENDPOINT
-
-
-TODO: endpoint string manipulation
+$ curl localhost:8080/
 
 ## Build and run via Docker
+(docker, curl)
 
 To run this via its supplied Dockerfile instead:
 (after cloning and working from root of directory)
@@ -44,6 +48,8 @@ $ docker build . -t go-ape/latest
 $ docker run -p 8080:8080 go-ape
 
 ## Testing Via goss/dgoss
+(goss/dgoss https://github.com/aelsabbahy/goss)
+
 Included is the goss.yaml file. Run it against the container via:
 
 $ dgoss run -p 8080:8080 go-ape/latest
@@ -51,6 +57,7 @@ $ dgoss run -p 8080:8080 go-ape/latest
 This checks that the app is running, and that endpoints are being returned thereby testing liveness on port 8080.
 
 ## Jenkins
+(docker)
 
 Included is the jenkinsfile to build and push image to dockerhub. To get dgoss working in Jenkins one needs to install it on the server. This can be accomplished by running the dockerfile in jenkins/Dockerfile. The tests are buiiltin to the Jenkinsfile for the pipeline so nothing needs done there. 
 
@@ -63,3 +70,18 @@ Here we are specifying we run jenkins over port 8084 on our local@ localhost:808
    Here you can add bitbucket and github login credentials of the username/password variety.
 
 For you github api keys you'll create those via  localhost:8084/configure ... scroll down to github section and click the jenkins dropdown next to key option. You'll need a github api key for giving jenkins permission to read/write on the repo, which you can get from your github page. Enter this as a "secret text". once done make sure you select it from the key dropdown, click "test" and if all is good, go ahead and save the page. 
+
+## Contributing
+Open to pull requests!
+
+TODO: Incorporate github status push in Jenkinsfile to workaround ui bugs that are present in current jenkins installs.
+
+TODO: Handle http parameters for all endpoints in the form of a query: localhost:8080/hello?uppercase=true should return HELLO
+
+TODO: Incorporate better testing mid pipeline on the app.
+
+TODO: Better error handling in go app
+
+TODO: optimize docker image (needs to be much lighter) without changing distros. Open to requests for dockerfiles/alpine to add working images (just the dockerfiles) to a similar structure.
+
+TODO: kubernetes. need a basic working setup under kubernetes/ with provided chef/ansible provisioner for cloud environment
