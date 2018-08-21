@@ -6,13 +6,17 @@ A basic app for testing a CI CD pipeline.
 
 GET "/" returns "hello world"
 
-GET "/uppercase=true" (or false) returns "HELLO WORLD" or "hello world" , respecitvely.
+GET "/?uppercase=true" (or false) returns "HELLO WORLD" or "hello world" , respecitvely.
 
-GET "/reverse=true" (or false) returens "dlrow olleh" or "hellow world"
+GET "/?reverse=true" (or false) returns "dlrow olleh" or "hellow world"
 
 GET "/hello" returns "hello"
 
+   params are same as above. eg localhost:8080/hello?uppercase=true
+
 GET /world" returns "world"
+
+   params are same as above. eg localhost:8080/world?uppercase=true
 
 With the app in a running state you can test these endpoints via curl: ```curl localhost:8080/hello```
 
