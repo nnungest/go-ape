@@ -35,10 +35,7 @@ $ go build
 
 $ ./go-ape
 
-$ curl localhost:8080/ENDPOINT
-
-
-TODO: endpoint string manipulation
+$ curl localhost:8080/
 
 ## Build and run via Docker
 (docker, curl)
@@ -73,3 +70,13 @@ Here we are specifying we run jenkins over port 8084 on our local@ localhost:808
    Here you can add bitbucket and github login credentials of the username/password variety.
 
 For you github api keys you'll create those via  localhost:8084/configure ... scroll down to github section and click the jenkins dropdown next to key option. You'll need a github api key for giving jenkins permission to read/write on the repo, which you can get from your github page. Enter this as a "secret text". once done make sure you select it from the key dropdown, click "test" and if all is good, go ahead and save the page. 
+
+## Contributing
+Open to pull requests!
+
+TODO: Incorporate github status push in Jenkinsfile to workaround ui bugs that are present in current jenkins installs.
+TODO: Handle http parameters for all endpoints in the form of a query: localhost:8080/hello?uppercase=true should return HELLO
+TODO: Incorporate better testing mid pipeline on the app.
+TODO: Better error handling in go app
+TODO: optimize docker image (needs to be much lighter) without changing distros. Open to requests for dockerfiles/alpine to add working images (just the dockerfiles) to a similar structure.
+TODO: kubernetes. need a basic working setup under kubernetes/ with provided chef/ansible provisioner for cloud environment
