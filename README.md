@@ -17,7 +17,7 @@ GET /world" returns "world"
 With the app in a running state you can test these endpoints via curl: ```curl localhost:8080/hello```
 
 
-![http](https://github.com/nnungest/go-ape/docs/hello.png "example via httpie")
+![http](https://raw.githubusercontent.com/nnungest/go-ape/master/docs/hello.png "example via httpie")
 
 ## Running
 _note: Under each header ive posted in parens what the local dependencies are._
