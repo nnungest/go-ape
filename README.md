@@ -76,6 +76,10 @@ cd into jenkins/ from this repo and ```docker-compose -f docker-compose.yml up -
 
 For you github api keys you'll create those via  localhost:8084/configure ... scroll down to github section and click the jenkins dropdown next to key option. You'll need a github api key for giving jenkins permission to read/write on the repo, which you can get from your github page. Enter this as a "secret text". once done make sure you select it from the key dropdown, click "test" and if all is good, go ahead and save the page. 
 
+Improvements: While this does pass the basic test of building a container, testing it and passing it off to dockerhub.. it could be argued that Jenkins should also build the app via go , run tests, hold on to binary , docker build , dgoss (tests) , docker push, and then binary push to GitHub. After that should be basic deployment steps. I.e. deploy to dev, test, staging... then ideally prod at some point. with tests in between. 
+
+
+
 ## Contributing
 Open to pull requests!
 
