@@ -5,13 +5,17 @@ pipeline {
     }
     stages {
         stage ('build go app') {
-            def root = tool name: 'Go 1.10', type: 'go'
-            withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
-            sh 'go version'
-            sh 'go build'
-            sh './go-ape'
-            sh 'if pgrep go-ape; then pkill go-ape; fi '
+          steps {
+            script {
+              def root = tool name: 'Go 1.10', type: 'go'
+              withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
+              sh 'go version'
+              sh 'go build'
+              sh './go-ape'
+              sh 'if pgrep go-ape; then pkill go-ape; fi '
+              }
             }
+          }
         }
         stage('Build Docker Image') {
             steps {
