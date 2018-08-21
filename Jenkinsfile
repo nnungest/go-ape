@@ -17,7 +17,7 @@ pipeline {
         stage('Test Docker image with dgoss') {
             steps {
                 sh """
-                /usr/local/bin/dgoss run -p 8080:8080 nnungester/go-ape
+                  export GOSS_FILES_STRATEGY=cp && /usr/local/bin/dgoss run -p 8080:8080 nnungester/go-ape
                 """
             }
         }
