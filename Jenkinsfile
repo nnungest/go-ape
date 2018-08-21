@@ -7,8 +7,7 @@ pipeline {
         stage ('build go app') {
           steps {
             script {
-              def root = tool name: 'Go 1.10', type: 'go'
-              withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
+              sh 'export PATH=$PATH:/usr/local/bin/go/bin'
               sh 'go version'
               sh 'go build'
               sh './go-ape'
