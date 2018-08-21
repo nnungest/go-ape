@@ -58,7 +58,7 @@ The jenkins portion can be run via: ```docker build -t jenkins/goss && docker ru
 
 Here we are specifying we run jenkins over port 8084 on our local@ localhost:8084 so that we aren't colliding with any local development on port 8080. Fire up a browser and head over to jenkins!
 
-### Jenkins pipline setup
+### Jenkins pipeline setup
   Jenkins needs to have credentials set under: Manage Jenkins > credentials > system > global credentials 
    Here you can add bitbucket and github login credentials of the username/password variety.
 
