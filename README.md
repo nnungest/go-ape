@@ -5,6 +5,10 @@ A basic app for testing a CI CD pipeline.
 
 GET "/" returns "hello world"
 
+GET "/uppercase=true" (or false) returns "HELLO WORLD" or "hello world" , respecitvely.
+
+GET "/reverse=true" (or false) returens "dlrow olleh" or "hellow world"
+
 GET "/hello" returns "hello"
 
 GET /world" returns "world"
@@ -23,7 +27,7 @@ $ cd go-ape
 
 $ go build
 
-$ go-ape
+$ ./go-ape
 
 $ curl localhost:8080/ENDPOINT
 
