@@ -13,11 +13,17 @@ GET "/hello" returns "hello"
 
 GET /world" returns "world"
 
+With the app in a running state you can test these endpoints via curl: ```curl localhost:8080/hello```
+
+
 ## Running
+_note: Under each header ive posted in parens what the local dependencies are._
 ### Option 1: Running from pre-built
+
 A prebuilt binary is included as "go-ape" in this repo. Simply run that and access it over http: $ ./go-ape && curl localhost:8080/
 
-### Option 2: Building the go Application from source
+### Option 2: Building the go Application from source 
+(go, curl, git)
 
 Assuming go is installed:
 
@@ -35,6 +41,7 @@ $ curl localhost:8080/ENDPOINT
 TODO: endpoint string manipulation
 
 ## Build and run via Docker
+(docker, curl)
 
 To run this via its supplied Dockerfile instead:
 (after cloning and working from root of directory)
@@ -44,6 +51,8 @@ $ docker build . -t go-ape/latest
 $ docker run -p 8080:8080 go-ape
 
 ## Testing Via goss/dgoss
+(goss/dgoss https://github.com/aelsabbahy/goss)
+
 Included is the goss.yaml file. Run it against the container via:
 
 $ dgoss run -p 8080:8080 go-ape/latest
@@ -51,6 +60,7 @@ $ dgoss run -p 8080:8080 go-ape/latest
 This checks that the app is running, and that endpoints are being returned thereby testing liveness on port 8080.
 
 ## Jenkins
+(docker)
 
 Included is the jenkinsfile to build and push image to dockerhub. To get dgoss working in Jenkins one needs to install it on the server. This can be accomplished by running the dockerfile in jenkins/Dockerfile. The tests are buiiltin to the Jenkinsfile for the pipeline so nothing needs done there. 
 
