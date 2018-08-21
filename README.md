@@ -37,9 +37,10 @@ $ ./go-ape
 
 $ curl localhost:8080/
 
-## Build and run via Docker
+## Build and run via Docker or Docker compose
 (docker, curl)
 
+**Dockerfile**
 To run this via its supplied Dockerfile instead:
 (after cloning and working from root of directory)
 
@@ -56,14 +57,18 @@ $ dgoss run -p 8080:8080 go-ape/latest
 
 This checks that the app is running, and that endpoints are being returned thereby testing liveness on port 8080.
 
-## Jenkins
-(docker)
+## Jenkins on port 8084
+(docker, docker-compose)
+
 
 Included is the jenkinsfile to build and push image to dockerhub. To get dgoss working in Jenkins one needs to install it on the server. This can be accomplished by running the dockerfile in jenkins/Dockerfile. The tests are buiiltin to the Jenkinsfile for the pipeline so nothing needs done there. 
 
 The jenkins portion can be run via: ```docker build -t jenkins/goss && docker run -p 8084:8080 -p 50000:50000 jenkins/jenkins:lts ```  
 
 Here we are specifying we run jenkins over port 8084 on our local@ localhost:8084 so that we aren't colliding with any local development on port 8080. Fire up a browser and head over to jenkins!
+
+**Docker Compose** 
+cd into jenkins/ from this repo and ```docker-compose -f docker-compose.yml up --build``` 
 
 ### Jenkins pipeline setup
   Jenkins needs to have credentials set under: Manage Jenkins > credentials > system > global credentials 
