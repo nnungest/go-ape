@@ -23,10 +23,47 @@ http:
         status: 200
         timeout: 1000
         body: [hello world]
+
+# hello block
+
   http://localhost:8080/hello:
         status: 200
         timeout: 1000
         body: [hello]
+  http://localhost:8080/hello?uppercase=true:
+        status: 200
+        timeout: 1000
+        body: [HELLO]
+  http://localhost:8080/hello?uppercase=false:
+        status: 200
+        timeout: 1000
+        body: [hello]
+  http://localhost:8080/hello?reverse=true:
+        status: 200
+        timeout: 1000
+        body: [olleh]
+  http://localhost:8080/hello?reverse=false:
+        status: 200
+        timeout: 1000
+        body: [hello]
+
+# world block
+  http://localhost:8080/world?uppercase=true:
+        status: 200
+        timeout: 1000
+        body: [WORLD]
+  http://localhost:8080/world?uppercase=false:
+        status: 200
+        timeout: 1000
+        body: [world]
+  http://localhost:8080/world?reverse=true:
+        status: 200
+        timeout: 1000
+        body: [dlrow]
+  http://localhost:8080/world?reverse=false:
+        status: 200
+        timeout: 1000
+        body: [world]
   http://localhost:8080/world:
         status: 200
         timeout: 1000

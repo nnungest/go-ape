@@ -22,14 +22,35 @@ func HWhandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// Worldhandler for world string only
-func Worldhandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "world")
+// Hellohandler for world string only
+func Hellohandler(w http.ResponseWriter, r *http.Request) {
+
+	if r.URL.Query().Get("uppercase") == "true" {
+		fmt.Fprintf(w, "HELLO")
+	} else if r.URL.Query().Get("uppercase") == "false" {
+		fmt.Fprintf(w, "hello")
+	} else if r.URL.Query().Get("reverse") == "true" {
+		fmt.Fprintf(w, "olleh")
+	} else if r.URL.Query().Get("reverse") == "false" {
+		fmt.Fprintf(w, "hello")
+	} else {
+		fmt.Fprintf(w, "hello")
+	}
 }
 
-// Hellohandler for hello string only
-func Hellohandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "hello")
+// Worldhandler for hello string only
+func Worldhandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Query().Get("uppercase") == "true" {
+		fmt.Fprintf(w, "WORLD")
+	} else if r.URL.Query().Get("uppercase") == "false" {
+		fmt.Fprintf(w, "world")
+	} else if r.URL.Query().Get("reverse") == "true" {
+		fmt.Fprintf(w, "dlrow")
+	} else if r.URL.Query().Get("reverse") == "false" {
+		fmt.Fprintf(w, "world")
+	} else {
+		fmt.Fprintf(w, "world")
+	}
 }
 
 func main() {
