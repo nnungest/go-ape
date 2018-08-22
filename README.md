@@ -102,4 +102,4 @@ TODO: Better error handling in go app.
 TODO: optimize docker image (needs to be much lighter) without changing distros. Open to requests for dockerfiles/alpine to add working images (just the dockerfiles) to a similar structure.
 
 TODO: kubernetes. need a basic working setup under kubernetes/ with provided chef/ansible provisioner for cloud environment.
-more to come
+
