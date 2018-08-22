@@ -1,7 +1,6 @@
 # Go Ape
 A basic app for testing a CI CD pipeline.
 
-
 **Endpoints**
 
 GET "/" returns "hello world"
