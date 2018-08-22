@@ -1,7 +1,4 @@
-ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/") {
-   withEnv(["GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"]) {
-   }
-}
+
 pipeline {
     agent any
     environment {
@@ -11,7 +8,6 @@ pipeline {
         stage ('build go app') {
           steps {
             script {
-              sh 'export PATH=$PATH:/usr/local/bin/go/bin'
               sh 'go version'
               sh 'go build'
               sh './go-ape'
