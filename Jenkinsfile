@@ -5,16 +5,6 @@ pipeline {
         DOCKER_IMAGE_NAME = "nnungester/go-ape"
     }
     stages {
-        stage ('build go app') {
-          steps {
-            script {
-              sh 'go version'
-              sh 'go build'
-              sh './go-ape'
-              sh 'if pgrep go-ape; then pkill go-ape; fi '
-              }
-            }
-          }
         stage('Build Docker Image') {
             steps {
                 script {
