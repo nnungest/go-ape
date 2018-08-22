@@ -93,7 +93,7 @@ Open to pull requests!
 
 TODO: Incorporate github status push in Jenkinsfile to workaround ui bugs that are present in current jenkins installs.
 
-TODO: Handle http parameters for all endpoints in the form of a query: localhost:8080/hello?uppercase=true should return HELLO
+[FIXED] TODO: Handle http parameters for all endpoints in the form of a query: localhost:8080/hello?uppercase=true should return HELLO
 
 TODO: Incorporate better testing mid pipeline on the app.
 
