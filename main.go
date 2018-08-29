@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-// HWhandler for somethign
+// HWhandler for hello world
 func HWhandler(w http.ResponseWriter, r *http.Request) {
 
 	if r.URL.Query().Get("uppercase") == "true" {
