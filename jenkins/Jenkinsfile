@@ -1,0 +1,21 @@
+#!/usr/bin/env groovy
+
+node('docker') {
+  String applicationName = "go-ape"
+  String buildNumber = "0.1.${env.BUILD_NUMBER}"
+  String goPath = "/go/src/github.com/nnungest/go-ape"
+
+  stage('Checkout from GitHub') {
+    checkout scm
+  }
+
+  stage("Create binaries") {
+    docker.image("golang:1.8.0-alpine").inside("-v ${pwd()}:${goPath}") {
+      sh "cd ${goPath} && GOOS=linux GOARCH=amd64 go build -o binaries/amd64/${buildNumber}/linux/${applicationName}-${buildNumber}.linux.amd64"
+    }
+  }
+
+  stage("Archive artifacts") {
+    archiveArtifacts artifacts: 'binaries/**', fingerprint: true
+  }
+}
